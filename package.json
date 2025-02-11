@@ -9,7 +9,8 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "sanity-chrome": "npx playwright test firstTest.spec.ts --project=chromium",
+    "firstTest-chrome": "npx playwright test firstTest.spec.ts --project=chromium",
+    "pageObjects-chrome": "npx playwright test usePageObjects.spec.ts --project=chromium",
     "sanity-firefox": "npx playwright test firstTest.spec.ts --project=firefox",
     "sanity-all-both": "npm run sanity-chrome & npm run sanity-firefox",
     "sanity-all-sequential": "npm run sanity-chrome && npm run sanity-firefox"

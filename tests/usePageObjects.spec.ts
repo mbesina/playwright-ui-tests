@@ -43,3 +43,11 @@ test("datepicket test", async ({ page }) => {
   await pm.onDatepickerPage().selectCommonDatePicketDateFromToday(2)
   await pm.onDatepickerPage().selectDatePickerWithRangeFromToday(6, 10)
 })
+
+
+
+test.only("CI test with Argos", async ({ page }) => {
+  const pm = new PageManager(page)
+  await pm.navigateTo().formLayoutsPage()
+  await pm.navigateTo().datepickerPage()
+})
