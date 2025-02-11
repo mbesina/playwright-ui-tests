@@ -5,6 +5,10 @@
 
 # dependencies
 /node_modules
+.env
+/test-results
+/playwright-report
+/screenshots
 
 # IDEs and editors
 /.idea
