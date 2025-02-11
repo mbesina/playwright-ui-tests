@@ -3,6 +3,7 @@ import type { TestOptions } from "@util/types"
 import * as dotenv from "dotenv"
 import * as path from "path"
 dotenv.config({ path: path.resolve(__dirname, ".env") })
+const port = 4200
 
 export default defineConfig<TestOptions>({
   timeout: 40000,
@@ -66,7 +67,9 @@ export default defineConfig<TestOptions>({
     },
   ],
   webServer: {
+    timeout: 120000,
     command: "npm run start",
-    url: "http://localhost:4200/",
+    port: port,
+    reuseExistingServer: !process.env.CI,
   },
 })
