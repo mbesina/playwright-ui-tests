@@ -12,7 +12,7 @@ export default defineConfig<TestOptions>({
     toMatchSnapshot: { maxDiffPixels: 50 },
   },
   fullyParallel: true,
-  retries: process.env.CI ? 2 : 0,
+  retries: process.env.CI ? 1 : 0,
   reporter: [
     ["json", { outputFile: "test-results/report.json" }],
     ["junit", { outputFile: "test-results/report.xml" }],
