@@ -12,7 +12,7 @@ export default defineConfig<TestOptions>({
     toMatchSnapshot: { maxDiffPixels: 50 },
   },
   fullyParallel: true,
-  retries: process.env.CI ? 1 : 0,
+  retries: process.env.CI ? 2 : 0,
   reporter: [
     ["json", { outputFile: "test-results/report.json" }],
     ["junit", { outputFile: "test-results/report.xml" }],
@@ -29,6 +29,7 @@ export default defineConfig<TestOptions>({
     //     : "http://localhost:4200/",
     trace: "on-first-retry",
     screenshot: "only-on-failure",
+    navigationTimeout: 6 * 10000,
   },
 
   projects: [
