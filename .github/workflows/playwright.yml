@@ -20,13 +20,8 @@ jobs:
         run: npm ci --force
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps --force
-      - name: Debug Environment Variables
-        run: |
-          echo "URL is: $URL"
-          echo "User is: $USER"
-        env:
-          URL: ${{ vars.URL }}
-          USER: ${{ secrets.USER }}
+      - name: Start Application
+        run: npm run start &
       - name: Run Playwright tests
         run: npm run pageObjects-chrome
         env:
